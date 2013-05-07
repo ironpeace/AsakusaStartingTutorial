@@ -1,11 +1,15 @@
 このチュートリアルは、こちらの記事のものを詳細化したものです。
 図等はこちらの記事を参考にしてください。
 http://www.atmarkit.co.jp/fjava/rensai4/bigdata_java07/03.html
-
 尚、分析対象データは、dataディレクトリ配下にあります。
+
+環境構築は事前に済ましている前提です。
+環境構築手順については、こちらをご参照。
+http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 
 1. プロジェクト作成
+
 	1) cd  workspace/
 
 	2) mvn archetype:generate -DarchetypeCatalog=http://asakusafw.s3.amazonaws.com/maven/archetype-catalog-0.4.xml
