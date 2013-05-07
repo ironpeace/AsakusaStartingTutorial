@@ -1,0 +1,13 @@
+digraph {
+    "d1c463da-f5fe-4cd0-a295-28bd0955f94c" [shape=box, label="@MasterJoin\nItemSalesSummaryOperator.joinItem"];
+    subgraph "cluster_cc2c1aef-3ca7-4974-ae34-89382acb9c53" {
+        label = "stage0002";
+        style = bold;
+        "dbc2248e-17a1-4a76-8003-e389112e057c" [shape=box, label="@Summarize\nItemSalesSummaryOperator.summarizeByCategory"];
+        "75746b4a-39d1-4d99-b47c-e60db9b22c19" [shape=point];
+    }
+    "94d96295-b1c1-4015-8d42-040f92479262" [shape=invhouse, label="ItemSalesSummary"];
+    "75746b4a-39d1-4d99-b47c-e60db9b22c19" -> "dbc2248e-17a1-4a76-8003-e389112e057c" [label="out>joinedSalesItem"];
+    "dbc2248e-17a1-4a76-8003-e389112e057c" -> "94d96295-b1c1-4015-8d42-040f92479262" [label="out>port"];
+    "d1c463da-f5fe-4cd0-a295-28bd0955f94c" -> "75746b4a-39d1-4d99-b47c-e60db9b22c19" [label="joined>in"];
+}

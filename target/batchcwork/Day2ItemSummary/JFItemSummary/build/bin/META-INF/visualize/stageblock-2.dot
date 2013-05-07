@@ -1,0 +1,13 @@
+digraph {
+    subgraph "cluster_d22c1189-10e9-4dad-a81b-d6cb0cb283f3" {
+        label = "stage0002";
+        style = bold;
+        "a4b9ddac-215a-48c2-b992-68fbbe31ea9d" [shape=box, label="@Summarize\nItemSalesSummaryOperator.summarizeByCategory"];
+        "9ea7a70b-f1e2-4815-b882-53826487a25f" [shape=point];
+    }
+    "e977d9f4-226a-448d-afde-43333861f9a2" [shape=invhouse, label="ItemSalesSummary"];
+    "bbfb68b0-e467-4c47-b519-79e5b98b369e" [shape=box, label="@MasterJoin\nItemSalesSummaryOperator.joinItem"];
+    "9ea7a70b-f1e2-4815-b882-53826487a25f" -> "a4b9ddac-215a-48c2-b992-68fbbe31ea9d" [label="out>joinedSalesItem"];
+    "a4b9ddac-215a-48c2-b992-68fbbe31ea9d" -> "e977d9f4-226a-448d-afde-43333861f9a2" [label="out>port"];
+    "bbfb68b0-e467-4c47-b519-79e5b98b369e" -> "9ea7a70b-f1e2-4815-b882-53826487a25f" [label="joined>in"];
+}

@@ -1,0 +1,8 @@
+core.batchId = Day2ItemSummary
+core.buildId = acf0c193-2feb-4f09-998a-0e4e2db150f4
+ASAKUSA_HOME = /Users/ITPUser/dev/asakusa/asakusa-develop/asakusa
+com.asakusafw.batchapp.build.java.version = 1.6.0_43
+com.asakusafw.batchapp.build.timestamp = 2013-05-07 08:33:01
+com.asakusafw.batchapp.project.version = 1.0-SNAPSHOT
+com.asakusafw.compiler.options = 
+com.asakusafw.framework.version = 0.4.0

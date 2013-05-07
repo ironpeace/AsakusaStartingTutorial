@@ -1,0 +1,31 @@
+digraph {
+    subgraph "cluster_2d476c8a-9361-452c-9bba-67760562479a" {
+        label = "stage0002";
+        style = bold;
+        "17465624-b7f0-43e3-af6c-e4bedb830688" [shape=box, label="@Summarize\nItemSalesSummaryOperator.summarizeByCategory"];
+        "e7aa7000-b92b-4e50-bc6b-a44d770489c1" [shape=point];
+    }
+    subgraph "cluster_6d5a874f-516e-46b4-9955-4864b00d1705" {
+        label = "(source)";
+        "c0db6117-a631-4058-bfb4-2cf37a50224c" [shape=invhouse, label="MstItem"];
+        "5ace2a64-a76d-46df-ad9b-74c9ac261cb8" [shape=invhouse, label="TrnSalesDetail"];
+    }
+    subgraph "cluster_fd4cae24-f902-447c-a6d5-f66313e6e83c" {
+        label = "stage0001";
+        style = bold;
+        "7858ae5d-5be1-409d-be05-4ce262647e3c" [shape=point];
+        "bec8b311-0161-472e-afa6-768aedb84610" [shape=point];
+        "c255d3c2-26dc-4cea-9aa7-cc589c2b55a9" [shape=box, label="@MasterJoin\nItemSalesSummaryOperator.joinItem"];
+    }
+    subgraph "cluster_d602ad15-dc7e-479b-81dd-3b740ff67d4a" {
+        label = "(sink)";
+        "523ae0ba-6665-4da5-92aa-eafa7e078629" [shape=invhouse, label="ItemSalesSummary"];
+    }
+    "17465624-b7f0-43e3-af6c-e4bedb830688" -> "523ae0ba-6665-4da5-92aa-eafa7e078629" [label="out>port"];
+    "e7aa7000-b92b-4e50-bc6b-a44d770489c1" -> "17465624-b7f0-43e3-af6c-e4bedb830688" [label="out>joinedSalesItem"];
+    "5ace2a64-a76d-46df-ad9b-74c9ac261cb8" -> "bec8b311-0161-472e-afa6-768aedb84610" [label="port>in"];
+    "c0db6117-a631-4058-bfb4-2cf37a50224c" -> "7858ae5d-5be1-409d-be05-4ce262647e3c" [label="port>in"];
+    "7858ae5d-5be1-409d-be05-4ce262647e3c" -> "c255d3c2-26dc-4cea-9aa7-cc589c2b55a9" [label="out>mstItem"];
+    "bec8b311-0161-472e-afa6-768aedb84610" -> "c255d3c2-26dc-4cea-9aa7-cc589c2b55a9" [label="out>trnSalesDetal"];
+    "c255d3c2-26dc-4cea-9aa7-cc589c2b55a9" -> "e7aa7000-b92b-4e50-bc6b-a44d770489c1" [label="joined>in"];
+}

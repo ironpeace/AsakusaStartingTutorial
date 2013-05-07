@@ -1,0 +1,13 @@
+digraph {
+    "bc10e3e4-8d16-451b-b956-a61ac2eb8319" [shape=invhouse, label="MstItem"];
+    "03446499-1b4e-4cb6-8ac6-46e5f106c20a" [shape=box, label="@MasterJoin\nItemSalesSummaryOperator.joinItem"];
+    "fedbcc63-b8bf-4333-9db3-4e4d27a6ef0d" [shape=invhouse, label="TrnSalesDetail"];
+    "8ecbb6ac-adef-4013-b3b8-0adba8388dae" [shape=box, label="@Summarize\nItemSalesSummaryOperator.summarizeByCategory"];
+    "05b3d883-895c-4b0d-9425-6c817cc6cc7c" [shape=invhouse, label="ItemSalesSummary"];
+    "445d56cc-ec36-4c52-b21b-ae033687279c" [shape=point];
+    "bc10e3e4-8d16-451b-b956-a61ac2eb8319" -> "03446499-1b4e-4cb6-8ac6-46e5f106c20a" [label="port>mstItem"];
+    "03446499-1b4e-4cb6-8ac6-46e5f106c20a" -> "8ecbb6ac-adef-4013-b3b8-0adba8388dae" [label="joined>joinedSalesItem"];
+    "03446499-1b4e-4cb6-8ac6-46e5f106c20a" -> "445d56cc-ec36-4c52-b21b-ae033687279c" [label="missed>in"];
+    "fedbcc63-b8bf-4333-9db3-4e4d27a6ef0d" -> "03446499-1b4e-4cb6-8ac6-46e5f106c20a" [label="port>trnSalesDetal"];
+    "8ecbb6ac-adef-4013-b3b8-0adba8388dae" -> "05b3d883-895c-4b0d-9425-6c817cc6cc7c" [label="out>port"];
+}

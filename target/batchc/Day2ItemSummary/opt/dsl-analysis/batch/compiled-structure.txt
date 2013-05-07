@@ -1,0 +1,26 @@
+batch: Day2ItemSummary
+flow: JFItemSummary
+    input:
+        MstItem (mufg.jobflow.MstItemFromCsv)
+        TrnSalesDetail (mufg.jobflow.TrnSalesDetailFromCsv)
+    output:
+        ItemSalesSummary (mufg.jobflow.ItemSalesSummaryToCsv)
+    stages:
+        prologue:
+        main:
+            stage: mufg.batchapp.day2ItemSummary.jFItemSummary.stage0001.StageClient
+                mapper: mufg.batchapp.day2ItemSummary.jFItemSummary.stage0001.StageMapper1
+                    fragment: mufg.batchapp.day2ItemSummary.jFItemSummary.stage0001.MapFragment1
+                mapper: mufg.batchapp.day2ItemSummary.jFItemSummary.stage0001.StageMapper2
+                    fragment: mufg.batchapp.day2ItemSummary.jFItemSummary.stage0001.MapFragment2
+                reducer: mufg.batchapp.day2ItemSummary.jFItemSummary.stage0001.StageReducer
+                    fragment: mufg.batchapp.day2ItemSummary.jFItemSummary.stage0001.ReduceFragment3
+                        operator: mufg.operator.ItemSalesSummaryOperator#joinItem([class mufg.modelgen.dmdl.model.MstItem, class mufg.modelgen.dmdl.model.TrnSalesDetail])[]
+            stage: mufg.batchapp.day2ItemSummary.jFItemSummary.stage0002.StageClient
+                mapper: mufg.batchapp.day2ItemSummary.jFItemSummary.stage0002.StageMapper1
+                    fragment: mufg.batchapp.day2ItemSummary.jFItemSummary.stage0002.MapFragment1
+                reducer: mufg.batchapp.day2ItemSummary.jFItemSummary.stage0002.StageReducer
+                    fragment: mufg.batchapp.day2ItemSummary.jFItemSummary.stage0002.ReduceFragment2
+                        operator: mufg.operator.ItemSalesSummaryOperator#summarizeByCategory([class mufg.modelgen.dmdl.model.JoinedSalesItem])[]
+        epilogue:
+            stage: mufg.batchapp.day2ItemSummary.jFItemSummary.windgate.epilogue.StageClient

@@ -1,0 +1,70 @@
+"商品マスタ"
+@windgate.csv(has_header = TRUE)
+mst_item = {
+  "商品ID"
+   @windgate.csv.field(name = "ITEM_ID")
+   item_id: LONG;
+ 
+  "商品名"
+   @windgate.csv.field(name = "ITEM_NAME")
+   item_name: TEXT;
+ 
+  "商品単価"
+   @windgate.csv.field(name = "UNIT_PRICE")
+   unit_price: LONG;
+ 
+  "商品原価"
+   @windgate.csv.field(name = "COST_PRICE")
+   cost_price: LONG;
+ 
+  "在庫数量"
+   @windgate.csv.field(name = "STOCK_AMOUNT")
+   stock_amount: LONG;
+};
+ 
+"売上明細"
+@windgate.csv(has_header = TRUE)
+trn_sales_detail = {
+  "売上明細ID"
+   @windgate.csv.field(name = "SALES_DETAIL_ID")
+   sales_detail_id: LONG;
+ 
+  "伝票ID"
+   @windgate.csv.field(name = "SLIP_ID")
+   slip_id: LONG;
+ 
+  "商品ID"
+   @windgate.csv.field(name = "ITEM_ID")
+   item_id: LONG;
+ 
+  "数量"
+   @windgate.csv.field(name = "AMOUNT")
+   amount: LONG;
+};
+
+"売上伝票+商品マスタ"
+joined joined_sales_item = 
+	trn_sales_detail -> {
+		    sales_detail_id -> sales_detail_id;
+		    amount -> amount;
+		    item_id -> item_id;
+		} % item_id 
+	+ mst_item -> {
+		    item_id -> item_id;
+		    item_name ->  item_name;
+		} % item_id;
+
+"商品毎の販売数量"
+@windgate.csv(has_header = TRUE)
+summarized item_sales_summary = joined_sales_item => {
+
+    @windgate.csv.field(name = "商品ID")
+    any item_id -> item_id ; // 表2の注1
+
+    @windgate.csv.field(name = "商品名")
+    any item_name -> item_name ; // 表2の注1
+
+    @windgate.csv.field(name = "販売数量")
+    sum amount -> amount_total; // 表2の注2
+
+} % item_id ; // グループ化キー（ここで指定した項目単位で集計を行う）

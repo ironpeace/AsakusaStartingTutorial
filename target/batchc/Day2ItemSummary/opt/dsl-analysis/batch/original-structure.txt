@@ -1,0 +1,13 @@
+batch: Day2ItemSummary
+flow: JFItemSummary
+    input:
+        MstItem (mufg.jobflow.MstItemFromCsv)
+        TrnSalesDetail (mufg.jobflow.TrnSalesDetailFromCsv)
+    output:
+        ItemSalesSummary (mufg.jobflow.ItemSalesSummaryToCsv)
+    flow: mufg.jobflow.JfItemSalesSummary
+        operator: mufg.operator.ItemSalesSummaryOperator#joinItem([class mufg.modelgen.dmdl.model.MstItem, class mufg.modelgen.dmdl.model.TrnSalesDetail])[]
+        input: InputDescription{name=MstItem, type=class mufg.modelgen.dmdl.model.MstItem}
+        output: OutputDescription{name=ItemSalesSummary, type=class mufg.modelgen.dmdl.model.ItemSalesSummary}
+        input: InputDescription{name=TrnSalesDetail, type=class mufg.modelgen.dmdl.model.TrnSalesDetail}
+        operator: mufg.operator.ItemSalesSummaryOperator#summarizeByCategory([class mufg.modelgen.dmdl.model.JoinedSalesItem])[]

@@ -1,0 +1,31 @@
+digraph {
+    subgraph "cluster_8887104d-28c2-45ca-9fd5-451334a1f69a" {
+        label = "(source)";
+        "de5db0ee-bb3d-4e20-997c-ae2e7903efeb" [shape=invhouse, label="TrnSalesDetail"];
+        "554a4393-e43d-462b-bd58-3fec43b94b16" [shape=invhouse, label="MstItem"];
+    }
+    subgraph "cluster_927ab728-bd46-4d80-9f1e-26e783ad2021" {
+        label = "stage0002";
+        style = bold;
+        "592eaa2a-4dd3-43f5-ad0a-cc71d072d922" [shape=point];
+        "9d442440-3869-4d25-970c-71cd39af5348" [shape=box, label="@Summarize\nItemSalesSummaryOperator.summarizeByCategory"];
+    }
+    subgraph "cluster_154714fe-931b-4d4c-810e-02e3f7a02ae9" {
+        label = "(sink)";
+        "c2fd5fcf-2534-4fb7-a821-9da76af71eba" [shape=invhouse, label="ItemSalesSummary"];
+    }
+    subgraph "cluster_fb284f38-d36b-43f4-9f74-173222e3ecbe" {
+        label = "stage0001";
+        style = bold;
+        "35fced2b-7e95-456b-a85d-fa42a421612b" [shape=box, label="@MasterJoin\nItemSalesSummaryOperator.joinItem"];
+        "ef85be1e-a3a7-4476-a8f3-fd0befb7ba7b" [shape=point];
+        "ab3d56b4-6c9f-4c36-9b03-8e21b7cb73ca" [shape=point];
+    }
+    "de5db0ee-bb3d-4e20-997c-ae2e7903efeb" -> "ef85be1e-a3a7-4476-a8f3-fd0befb7ba7b" [label="port>in"];
+    "554a4393-e43d-462b-bd58-3fec43b94b16" -> "ab3d56b4-6c9f-4c36-9b03-8e21b7cb73ca" [label="port>in"];
+    "592eaa2a-4dd3-43f5-ad0a-cc71d072d922" -> "9d442440-3869-4d25-970c-71cd39af5348" [label="out>joinedSalesItem"];
+    "9d442440-3869-4d25-970c-71cd39af5348" -> "c2fd5fcf-2534-4fb7-a821-9da76af71eba" [label="out>port"];
+    "35fced2b-7e95-456b-a85d-fa42a421612b" -> "592eaa2a-4dd3-43f5-ad0a-cc71d072d922" [label="joined>in"];
+    "ab3d56b4-6c9f-4c36-9b03-8e21b7cb73ca" -> "35fced2b-7e95-456b-a85d-fa42a421612b" [label="out>mstItem"];
+    "ef85be1e-a3a7-4476-a8f3-fd0befb7ba7b" -> "35fced2b-7e95-456b-a85d-fa42a421612b" [label="out>trnSalesDetal"];
+}

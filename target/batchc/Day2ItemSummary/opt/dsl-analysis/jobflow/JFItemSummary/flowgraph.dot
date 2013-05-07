@@ -1,0 +1,13 @@
+digraph {
+    "69e9d09b-88f9-4d53-ad48-d03168bb0c05" [shape=box, label="@MasterJoin\nItemSalesSummaryOperator.joinItem"];
+    "a952db82-a72b-43ae-891c-b64021c475b7" [shape=box, label="@Summarize\nItemSalesSummaryOperator.summarizeByCategory"];
+    "f413749a-f592-4759-bdcb-e5d4dcd0aff8" [shape=invhouse, label="MstItem"];
+    "767d594a-edd2-4387-8604-39f202bd01ee" [shape=invhouse, label="ItemSalesSummary"];
+    "f8e3f854-7bba-434b-a9ee-2ab4a7a20f65" [shape=invhouse, label="TrnSalesDetail"];
+    "381d0dfc-d242-4146-aace-3daeeb1feb14" [shape=point];
+    "69e9d09b-88f9-4d53-ad48-d03168bb0c05" -> "a952db82-a72b-43ae-891c-b64021c475b7" [label="joined>joinedSalesItem"];
+    "69e9d09b-88f9-4d53-ad48-d03168bb0c05" -> "381d0dfc-d242-4146-aace-3daeeb1feb14" [label="missed>in"];
+    "a952db82-a72b-43ae-891c-b64021c475b7" -> "767d594a-edd2-4387-8604-39f202bd01ee" [label="out>port"];
+    "f413749a-f592-4759-bdcb-e5d4dcd0aff8" -> "69e9d09b-88f9-4d53-ad48-d03168bb0c05" [label="port>mstItem"];
+    "f8e3f854-7bba-434b-a9ee-2ab4a7a20f65" -> "69e9d09b-88f9-4d53-ad48-d03168bb0c05" [label="port>trnSalesDetal"];
+}
