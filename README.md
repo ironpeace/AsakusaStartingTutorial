@@ -1,4 +1,9 @@
+このチュートリアルは、こちらの記事のものを詳細化したものです。
+図等はこちらの記事を参考にしてください。
 http://www.atmarkit.co.jp/fjava/rensai4/bigdata_java07/03.html
+
+尚、分析対象データは、dataディレクトリ配下にあります。
+
 
 1. プロジェクト作成
 	1) cd  workspace/
