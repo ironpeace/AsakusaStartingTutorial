@@ -16,7 +16,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 	
 		以下出力結果が得られます。
 
-		...
+		```
 		Picked up _JAVA_OPTIONS: -Dfile.encoding=UTF-8
 		[INFO] Scanning for projects...
 		[INFO]                                                                         
@@ -36,7 +36,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 		2: http://asakusafw.s3.amazonaws.com/maven/archetype-catalog-0.4.xml -> com.asakusafw:asakusa-archetype-thundergate (-)
 		3: http://asakusafw.s3.amazonaws.com/maven/archetype-catalog-0.4.xml -> com.asakusafw:asakusa-archetype-directio (-)
 		Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): : 
-		...
+		```
 
 	3) 1を入力
 	
