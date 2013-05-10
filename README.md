@@ -265,9 +265,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	3) Name に ItemSalesSummaryOperator と入力
 
-	4) abstract にチェック
-
-	5) ソースに、以下を上書き
+	4) ソースに、以下を上書き
 
 		package mufg.operator;
 
@@ -286,7 +284,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 			public abstract ItemSalesSummary summarizeByCategory(JoinedSalesItem joinedSalesItem);
 		}
 
-	6) eclipseで、tutorial/pom.xml を右クリックし、［Run As］>［Maven generate-source］
+	5) eclipseで、tutorial/pom.xml を右クリックし、［Run As］>［Maven generate-source］
 	
 	以下出力結果が得られます。
 
@@ -309,7 +307,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 		[INFO] ------------------------------------------------------------------------
 
 
-	7) eclipse で、 target/generated-sources/annotations 配下を確認
+	6) eclipse で、 target/generated-sources/annotations 配下を確認
 
 6. Expoerter/Importerの実装
 
@@ -319,9 +317,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	3) Name に MstItemFromCsv と入力
 
-	4) SuperClass に mufg.modelgen.dmdl.csv.AbstractMstItemCsvImporterDescription と入力
-
-	5) ソースに、以下を上書き
+	4) ソースに、以下を上書き
 
 		package mufg.jobflow;
 
@@ -348,15 +344,13 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 		    }
 		}
 
-	6) eclipseで、src/main/java の、mufg.jobflow を右クリック
+	5) eclipseで、src/main/java の、mufg.jobflow を右クリック
 
-	7) [New] > [Class]
+	6) [New] > [Class]
 
-	8) Name に TrnSalesDetailFromCsv と入力
+	7) Name に TrnSalesDetailFromCsv と入力
 
-	9) SuperClass に mufg.modelgen.dmdl.csv.AbstractTrnSalesDetailCsvImporterDescription と入力
-
-	10) ソースに、以下を上書き
+	8) ソースに、以下を上書き
 
 		package mufg.jobflow;
 
@@ -385,15 +379,13 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 		}
 
 
-	11) eclipseで、src/main/java の、mufg.jobflow を右クリック
+	9) eclipseで、src/main/java の、mufg.jobflow を右クリック
 
-	12) [New] > [Class]
+	10) [New] > [Class]
 
-	13) Name に ItemSalesSummaryToCsv と入力
+	11) Name に ItemSalesSummaryToCsv と入力
 
-	14) SuperClass に mufg.modelgen.dmdl.csv.AbstractItemSalesSummaryCsvExporterDescription と入力
-
-	15) ソースに、以下を上書き
+	12) ソースに、以下を上書き
 
 		package mufg.jobflow;
 
@@ -424,9 +416,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	3) Name に JfItemSalesSummary と入力
 
-	4) SuperClass に com.asakusafw.vocabulary.flow.FlowDescription と入力
-
-	5) ソースに、以下を上書き
+	4) ソースに、以下を上書き
 
 		package mufg.jobflow;
 
@@ -495,9 +485,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	3) Name に BtSummarize と入力
 
-	4) SuperClass に com.asakusafw.vocabulary.batch.BatchDescription と入力
-
-	5) ソースに、以下を上書き
+	4) ソースに、以下を上書き
 
 		package mufg.batch;
 
@@ -563,9 +551,11 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	3) mkdir /tmp/windgate-$USER/hands_on/input/
 
-	4) /tmp/windgate-$USER/hands_on/input/ に、 mst_item.tsv 配置
+	4) cd /tmp/windgate-$USER/hands_on/input/
+	
+	5) wget https://github.com/ironpeace/AsakusaStartingTutorial/blob/master/data/mst_item.tsv
 
-	5) /tmp/windgate-$USER/hands_on/input/ に、 trn_sales_detail.tsv 配置
+	5) wget https://github.com/ironpeace/AsakusaStartingTutorial/blob/master/data/trn_sales_detail.tsv
 
 
 12. アプリケーションの実行
