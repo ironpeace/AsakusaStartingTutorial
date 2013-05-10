@@ -255,6 +255,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	3) eclipse で、 target/generated-sources/modelgen 配下を確認
 
+	4) この時点でeclipseでエラーとなっているjavaファイルは全て削除
 
 5. マスタ結合処理の実装
 
