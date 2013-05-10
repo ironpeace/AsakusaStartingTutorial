@@ -38,7 +38,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	3) 1を入力
 	
-		以下出力結果が得られます。
+	以下出力結果が得られます。
 
 		Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): : 1
 		Choose com.asakusafw:asakusa-archetype-windgate version: 
@@ -48,31 +48,31 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	4) そのままEnter
 	
-		以下出力結果が得られます。
+	以下出力結果が得られます。
 
 		Define value for property 'groupId': : 
 
 	5) mufg と入力
 	
-		以下出力結果が得られます。
+	以下出力結果が得られます。
 
 		Define value for property 'artifactId': : 
 
 	6) tutorial と入力
 	
-		以下出力結果が得られます。
+	以下出力結果が得られます。
 
 		Define value for property 'version':  1.0-SNAPSHOT: : 
 
 	7) そのままEnter
 	
-		以下出力結果が得られます。
+	以下出力結果が得られます。
 
 		Define value for property 'package':  mufg: :         
 
 	8) そのままEnter
 	
-		以下出力結果が得られます。
+	以下出力結果が得られます。
 
 		Confirm properties configuration:
 		groupId: mufg
@@ -83,7 +83,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	9) Y と入力
 	
-		以下出力結果が得られます。
+	以下出力結果が得られます。
 
 		[INFO] ----------------------------------------------------------------------------
 		[INFO] Using following parameters for creating project from Archetype: asakusa-archetype-windgate:0.4.0
@@ -113,7 +113,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	2) mvn eclipse:eclipse
 	
-		以下出力結果が得られます。
+	以下出力結果が得られます。
 
 		Picked up _JAVA_OPTIONS: -Dfile.encoding=UTF-8
 		[INFO] Scanning for projects...
@@ -232,7 +232,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	2) eclipseで、tutorial/pom.xml を右クリックし、［Run As］>［Maven generate-source］
 	
-		以下出力結果が得られます。
+	以下出力結果が得られます。
 
 		[INFO] Scanning for projects...
 		[INFO]                                                                         
@@ -288,7 +288,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	6) eclipseで、tutorial/pom.xml を右クリックし、［Run As］>［Maven generate-source］
 	
-		以下出力結果が得られます。
+	以下出力結果が得られます。
 
 		[INFO] Scanning for projects...
 		[INFO]                                                                         
@@ -521,8 +521,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 	1) mvn clean package
 	   (terminal)
 	
-		以下出力結果が得られます。
-
+	以下出力結果が得られます。
 
 		Picked up _JAVA_OPTIONS: -Dfile.encoding=UTF-8
 		[INFO] Scanning for projects...
@@ -572,7 +571,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	1) $ASAKUSA_HOME/yaess/bin/yaess-batch.sh Day2ItemSummary
 	
-		以下出力結果が得られます。
+	以下出力結果が得られます。
 
 		E/yaess/bin/yaess-batch.sh Day2ItemSummary
 		Starting YAESS
@@ -595,7 +594,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	3) cat /tmp/windgate-$USER/hands_on/output/item_sales_summary.csv
 	
-		以下出力結果が得られます。
+	以下出力結果が得られます。
 
 		商品ID,商品名,販売数量
 		1,AAA,31
