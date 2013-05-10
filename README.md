@@ -549,8 +549,11 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	2) cd $ASAKUSA_HOME/batchapps
 
-	3) jar xf *batchapps*.jar
-
+	3) 下記コマンドを実行してください。
+	
+		```
+		jar xf *batchapps*.jar
+		```
 
 11. データの配置
 
