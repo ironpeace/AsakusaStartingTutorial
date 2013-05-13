@@ -12,7 +12,7 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	1) cd  workspace/
 
-	2) mvn archetype:generate -DarchetypeCatalog=http://asakusafw.s3.amazonaws.com/maven/archetype-catalog-0.4.xml
+	2) mvn archetype:generate -DarchetypeCatalog=http://asakusafw.s3.amazonaws.com/maven/archetype-catalog-0.5.xml
 	
 	以下出力結果が得られます。
 
@@ -31,9 +31,9 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 		[INFO] Generating project in Interactive mode
 		[INFO] No archetype defined. Using maven-archetype-quickstart (org.apache.maven.archetypes:maven-archetype-quickstart:1.0)
 		Choose archetype:
-		1: http://asakusafw.s3.amazonaws.com/maven/archetype-catalog-0.4.xml -> com.asakusafw:asakusa-archetype-windgate (-)
-		2: http://asakusafw.s3.amazonaws.com/maven/archetype-catalog-0.4.xml -> com.asakusafw:asakusa-archetype-thundergate (-)
-		3: http://asakusafw.s3.amazonaws.com/maven/archetype-catalog-0.4.xml -> com.asakusafw:asakusa-archetype-directio (-)
+		1: http://asakusafw.s3.amazonaws.com/maven/archetype-catalog-0.5.xml -> com.asakusafw:asakusa-archetype-windgate (-)
+		2: http://asakusafw.s3.amazonaws.com/maven/archetype-catalog-0.5.xml -> com.asakusafw:asakusa-archetype-thundergate (-)
+		3: http://asakusafw.s3.amazonaws.com/maven/archetype-catalog-0.5.xml -> com.asakusafw:asakusa-archetype-directio (-)
 		Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): : 
 
 	3) 1を入力
@@ -42,8 +42,8 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 		Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): : 1
 		Choose com.asakusafw:asakusa-archetype-windgate version: 
-		1: 0.4-SNAPSHOT
-		2: 0.4.0
+		1: 0.5-SNAPSHOT
+		2: 0.5.0
 		Choose a number: 2: 
 
 	4) そのままEnter
