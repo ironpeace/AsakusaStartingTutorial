@@ -553,9 +553,9 @@ http://asakusafw.s3.amazonaws.com/documents/jinrikisha/ja/html/install.html
 
 	4) cd /tmp/windgate-$USER/hands_on/input/
 	
-	5) wget https://raw.github.com/ironpeace/AsakusaStartingTutorial/blob/master/data/mst_item.tsv
+	5) wget https://raw.github.com/ironpeace/AsakusaStartingTutorial/master/data/mst_item.tsv
 
-	5) wget https://raw.github.com/ironpeace/AsakusaStartingTutorial/blob/master/data/trn_sales_detail.tsv
+	5) wget https://raw.github.com/ironpeace/AsakusaStartingTutorial/master/data/trn_sales_detail.tsv
 
 
 12. アプリケーションの実行
